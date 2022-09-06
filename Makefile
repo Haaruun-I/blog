@@ -10,16 +10,26 @@ serve:
 	- clear
 	./hugo serve -p 8000
 
-generate:
+generate-pipenv:
 	- clear
-	- pipenv shell
 	mkdir './page_gen'
 	- rm $$(find . -wholename "./content/projects/*" ! -name "_index.md")
-	python ./scripts/generate.py
+	pipenv run python ./scripts/generate.py
 	cp ./page_gen/* ./content/projects/
+	- make clear-temp
+
+
+generate:
+		- clear
+		mkdir './page_gen'
+		- make clear
+		python ./scripts/generate.py
+		cp ./page_gen/* ./content/projects/
+		- make clear-temp
+
+clear-temp:
 	- rm $$(find . -wholename "./page_gen/*")
-	rmdir ./page_gen
+	- rmdir ./page_gen
 
 clear:
-	- clear
-	rm $$(find . -wholename "./content/projects/*" ! -name "_index.md")
+	- rm $$(find . -wholename "./content/projects/*" ! -name "_index.md")
