@@ -79,7 +79,8 @@ hr {
 article span {
     font-weight: 100;
 
-    display: inline
+    display: inline;
+    margin-left: 5px
 }
 
 figure {
