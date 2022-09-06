@@ -1,5 +1,5 @@
-baseURL = 'http://localhost:8080/'
-title = "Gad's Blog"
+baseURL = 'https://harrys-example-blog.netlify.app'
+title = "Harry's Blog"
 
 [markup.highlight]
 style = 'api'
