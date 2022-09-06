@@ -171,4 +171,8 @@ figcaption {
       line-height: 10vh;
     }
 
+    article span {
+      margin-left: 0;
+      display: block;
+    }
 }
