@@ -1,0 +1,10 @@
+{{ define "main" }}
+    <article class="fullwidth">
+        <h1>{{ .Title }}</h1>
+            {{ if gt .WordCount 400 }}
+                {{.TableOfContents}}
+                <hr />
+            {{ end }}
+        <p>{{ .Content }}</p>
+    </article>
+{{ end }}

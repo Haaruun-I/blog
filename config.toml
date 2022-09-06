@@ -1,0 +1,7 @@
+baseURL = 'http://localhost:8080/'
+title = "Gad's Blog"
+
+[markup.highlight]
+style = 'api'
+
+[taxonomies]

@@ -1,0 +1,115 @@
+:root {
+    --surface: hsl(0, 0%, 6%);
+    --highlight: hsl(0, 0%, 83%);
+    --underlay: hsl(0, 0%, 53%);
+
+}
+
+body {
+    width: clamp(50vw, 900px, 90vw);
+    margin: auto;
+    margin-top: 4em;
+
+    background-color: var(--surface);
+    color: var(--highlight);
+
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 100;
+    font-size: 1.5rem;
+}
+
+header.nav {
+    height: 5vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--highlight);
+}
+
+
+main {
+    padding: 15px;
+    margin: auto;
+}
+
+a {
+    color: var(--highlight);
+
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+article {
+    padding: 10px;
+    padding-top: 0;
+}
+
+article h2 {
+    margin-bottom: 5px;
+    display: inline;
+}
+
+article p {
+    font-weight: 100;
+}
+
+p {
+    font-weight: lighter;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+}
+
+hr {
+    color: var(--highlight);
+}
+
+article span {
+    font-weight: 100;
+
+    display: inline
+}
+
+figure {
+    width: 100%;
+}
+
+img {
+    width: 100%
+}
+
+figcaption {
+    width: 100%;
+
+    font-weight: lighter;
+    text-align: center;
+    font-size: 1.5rem;
+
+    color: var(--underlay);
+}
+
+.fullwidth {
+    width: 100%;
+}
+
+.hero {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 5%;
+}
+
+.hero img {
+    min-width: 100px;
+    max-width: 30%;
+    border-radius: 50%;
+
+    margin: auto;
+}

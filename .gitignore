@@ -1,0 +1,11 @@
+__pycache__/
+resources/
+public/
+
+.hugo_build.lock
+Pipfile.lock
+hugo
+.env
+
+content/projects/*
+!content/projects/_index.md

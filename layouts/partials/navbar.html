@@ -1,0 +1,13 @@
+<header class="nav">
+    <a href="/" class="brand">
+      <span>{{ .Site.Home.Title }}</span>
+    </a>
+  
+    <nav class="menu">
+        {{ range .Site.Home.Pages }}
+            {{ if and (ne .Title "index")}}
+                <a href="{{ .Permalink }}" class="pseudo">{{ .Title }}</a>
+            {{ end }}
+        {{ end }}
+    </nav>
+</header>
