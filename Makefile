@@ -2,7 +2,7 @@ build:
 	- clear
 	make generate
 	- clear
-	hugo --gc --minify,a
+	hugo --gc --minify
 
 serve:
 	- clear
