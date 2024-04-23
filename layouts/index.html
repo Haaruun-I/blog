@@ -5,7 +5,6 @@
             {{ .Content }}
         </div>
     </section>
-    <hr />
     {{ range .Site.Home.Pages }}{{ if and (ne .Title "index")}}
         <section>
             <h1 class="center">{{ .Title }}</h1>
@@ -13,6 +12,5 @@
                 {{ partial "summary.html" . }}
             {{ end }}
         </section>
-        <hr />
     {{ end }}{{ end }}
 {{end}}

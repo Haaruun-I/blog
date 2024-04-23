@@ -8,5 +8,4 @@ Pipfile.lock
 hugo
 .env
 
-content/projects/*
-!content/projects/_index.md
+content/
