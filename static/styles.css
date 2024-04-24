@@ -5,6 +5,11 @@
 
 }
 
+@font-face {
+  font-family: 'DM Mono';
+  src: url('/fonts/DMMono-Medium.ttf');
+}
+
 body {
     width: clamp(50vw, 900px, 90vw);
     margin: auto;
@@ -13,7 +18,7 @@ body {
     background-color: var(--surface);
     color: var(--highlight);
 
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Courier New', Courier;
     font-weight: 100;
     font-size: 1.5rem;
 }
@@ -36,6 +41,7 @@ header.nav .menu-icon {
 main {
     padding: 15px;
     margin: auto;
+    margin-top: 15px;
 }
 
 a {
@@ -77,6 +83,7 @@ hr {
 }
 
 article span {
+    white-space: nowrap;
     font-weight: 100;
 
     display: inline;
@@ -175,4 +182,69 @@ figcaption {
       margin-left: 0;
       display: block;
     }
+}
+
+
+.glitch {
+  position: relative;
+}
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+}
+
+
+
+.glitch::before {
+  /* ... anything needed to make it identical */
+  height: 1em;
+
+  /* variation */
+  left: 2px;
+  text-shadow: -1px 0 red;
+  
+  /* important: opaque background masks the original */
+  background: var(--surface);
+  animation: noise-anim-2 5s infinite linear;
+}
+.glitch::after {
+  /* ... anything needed to make it identical */
+
+  /* variation */
+  left: -2px;
+  text-shadow: -1px 0 blue;
+  
+  /* important: opaque background masks the original */
+  background: var(--surface);
+
+  animation: noise-anim-1 5s infinite linear;
+}
+
+@keyframes noise-anim-1 {
+  0% {
+    clip-path: inset(100% 0 -10% 0);
+  }
+  90%{
+    clip-path: inset(-10% 0 100% 0);
+  }
+  100%{
+    clip-path: inset(-10% 0 100% 0);
+  }
+}
+
+
+@keyframes noise-anim-2 {
+  0% {
+    clip-path: inset(100% 0 -10% 0);
+  }
+  10% {
+    clip-path: inset(100% 0 -10% 0);
+  }
+  100%{
+    clip-path: inset(-10% 0 100% 0);
+  }
 }

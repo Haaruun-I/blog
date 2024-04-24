@@ -7,7 +7,7 @@
     </section>
     {{ range .Site.Home.Pages }}{{ if and (ne .Title "index")}}
         <section>
-            <h1 class="center">{{ .Title }}</h1>
+            <h1 class="center glitch" data-text="{{.Title}}">{{ .Title }}</h1>
             {{ range first 5 .Pages }}
                 {{ partial "summary.html" . }}
             {{ end }}
