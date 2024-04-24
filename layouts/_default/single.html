@@ -1,6 +1,6 @@
 {{ define "main" }}
     <article class="fullwidth">
-        <h1>{{ .Title }}</h1>
+        <h1>{{ .Title }}</h1> <span><a href="{{ .Params.ghlink }}">Projeage</a></span>
             {{ if gt .WordCount 400 }}
                 {{.TableOfContents}}
                 <hr />
