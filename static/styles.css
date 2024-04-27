@@ -16,6 +16,7 @@ body {
     font-family: 'Courier New', Courier;
     font-weight: 100;
     font-size: 1.5rem;
+    line-height: 2rem;
 }
 
 header.nav {
@@ -68,7 +69,7 @@ p {
     font-weight: lighter;
 }
 
-h1 {
+h1.center {
     width: 100%;
     text-align: center;
 }
@@ -91,6 +92,12 @@ figure {
 
 img {
     width: 100%
+}
+
+code {
+  padding: .1rem;
+  background-color: var(--highlight);
+  color: var(--surface);
 }
 
 figcaption {
@@ -183,7 +190,6 @@ figcaption {
 .glitch {
   position: relative;
 }
-.glitch::before,
 .glitch::after {
   content: attr(data-text);
   position: absolute;
@@ -192,20 +198,6 @@ figcaption {
   width: inherit;
 }
 
-
-
-.glitch::before {
-  /* ... anything needed to make it identical */
-  height: 1em;
-
-  /* variation */
-  left: 2px;
-  text-shadow: -1px 0 red;
-  
-  /* important: opaque background masks the original */
-  background: var(--surface);
-  animation: noise-anim-2 5s infinite linear;
-}
 .glitch::after {
   /* ... anything needed to make it identical */
 
@@ -225,19 +217,6 @@ figcaption {
   }
   90%{
     clip-path: inset(-10% 0 100% 0);
-  }
-  100%{
-    clip-path: inset(-10% 0 100% 0);
-  }
-}
-
-
-@keyframes noise-anim-2 {
-  0% {
-    clip-path: inset(100% 0 -10% 0);
-  }
-  10% {
-    clip-path: inset(100% 0 -10% 0);
   }
   100%{
     clip-path: inset(-10% 0 100% 0);

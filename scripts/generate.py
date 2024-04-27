@@ -17,6 +17,7 @@ pinnedItemsQuery = """{
           name
           description
           updatedAt
+          homepageUrl
           object(expression: "HEAD:README.md") {
             ... on Blob {
               text
@@ -72,7 +73,8 @@ for repository in pinnedItemsResponse:
         'title': repository['name'],
         'date': repository['updatedAt'],
         'summary': repository['description'],
-        'projectPage': 'https://github.com/' + username + '/' + repository['name'],
+        'homepage': repository['homepageUrl'],
+        'projectPage': 'https://github.com/' + username + '/' + repository['name'], 
     }, body = repository['object']['text'])
     projects.children.append(article)
 

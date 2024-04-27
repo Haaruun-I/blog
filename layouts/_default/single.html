@@ -1,10 +1,18 @@
 {{ define "main" }}
     <article class="fullwidth">
-        <h1>{{ .Param "test" }}</h1> <span><a href='{{ .Param "projectPage" }}'>Project Page</a></span>
+        <h1 data-text="{{ .Title }}" class="glitch">{{ .Title }}</h1>
+        <section>
+            Last Updated: {{ .Date.Format "January 2, 2006"  }} <br>
+            <a href='{{ .Param "projectPage" }}'>Project Code</a> 
+            {{ if not (eq (.Param "homepage") "None") }} | <a href='{{ .Param "homepage" }}'>Homepage</a> {{end}}
+        </section>
+        <hr>
             {{ if gt .WordCount 400 }}
+                <br>
+                <h2 class="glitch" data-text="Table Of Contents">Table Of Contents</h2>
                 {{.TableOfContents}}
                 <hr />
             {{ end }}
         <p>{{ .Content }}</p>
     </article>
-{{ end }} 
+{{ end }}
