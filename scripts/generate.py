@@ -72,7 +72,7 @@ for repository in pinnedItemsResponse:
         'title': repository['name'],
         'date': repository['updatedAt'],
         'summary': repository['description'],
-        'params: \n    ghLink': 'https://github.com/' + username + '/' + repository['name']
+        'projectPage': 'https://github.com/' + username + '/' + repository['name'],
     }, body = repository['object']['text'])
     projects.children.append(article)
 

@@ -1,10 +1,10 @@
 {{ define "main" }}
     <article class="fullwidth">
-        <h1>{{ .Title }}</h1> <span><a href="{{ .Params.ghlink }}">Projeage</a></span>
+        <h1>{{ .Param "test" }}</h1> <span><a href='{{ .Param "projectPage" }}'>Project Page</a></span>
             {{ if gt .WordCount 400 }}
                 {{.TableOfContents}}
                 <hr />
             {{ end }}
         <p>{{ .Content }}</p>
     </article>
-{{ end }}
+{{ end }} 

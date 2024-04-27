@@ -6,7 +6,7 @@ build:
 
 serve:
 	- clear
-	./hugo serve -p 8000
+	./hugo serve -p 8006
 
 generate:
 		- clear
