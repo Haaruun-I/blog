@@ -5,6 +5,14 @@
 
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface: hsl(55, 14%, 90%);
+    --highlight: hsl(180, 8%, 3%);
+    --underlay: hsl(180, 8%, 13%);
+  }
+}
+
 body {
     width: clamp(50vw, 900px, 90vw);
     margin: auto;
