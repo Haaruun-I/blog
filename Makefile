@@ -14,4 +14,5 @@ generate:
 		python ./scripts/generate.py
 
 clear:
-	- find . -wholename "./content/*/*.md" ! -name "_index.md" -exec rm {} \;
+	- find . -wholename "./content/*/* ! -name "_index.md" -exec rm {} \;
+	- rm -rf temp

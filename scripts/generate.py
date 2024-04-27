@@ -6,7 +6,6 @@ basePath = "./content/"
 token = os.getenv('GITHUB_TOKEN')
 username = os.getenv('GITHUB_USERNAME')
 
-print(username)
 url = "https://api.github.com/graphql"
 
 pinnedItemsQuery = """{
@@ -79,3 +78,30 @@ for repository in pinnedItemsResponse:
     projects.children.append(article)
 
 root.save()
+
+os.system('git clone ' + os.getenv('BLOG_REPO') + " temp")
+
+from obsidian_to_hugo import ObsidianToHugo
+
+def addFrontmatter(text, path):
+    temp = text.split("---")
+    print(len(temp))
+    if len(temp) >= 2:
+      summary = temp[0]
+      body = '---'.join(temp[1:])
+    else:
+      summary=""
+      body=text
+
+    return str(content.Article(frontmatter = {
+      'title': path.split('.')[0],
+      'summary': summary
+    }, body = body))
+
+obsidian_to_hugo = ObsidianToHugo(
+    obsidian_vault_dir="./temp",
+    hugo_content_dir="./content/posts",
+    processors=[addFrontmatter]
+)
+
+obsidian_to_hugo.run()
