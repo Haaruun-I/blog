@@ -36,7 +36,6 @@ class Category():
         index_file_path = os.path.join(folder_path, "_index.md")
         writeFile(index_file_path, index_content)
 
-        print('test')
         for child in self.children:
             if isinstance(child, Article):
                 child_file_path = os.path.join(folder_path, f"{child.frontmatter['title']}.md")

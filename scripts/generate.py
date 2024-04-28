@@ -84,22 +84,25 @@ os.system('git clone ' + os.getenv('BLOG_REPO') + " temp")
 from obsidian_to_hugo import ObsidianToHugo
 import subprocess
 
+# TODO unspaget this code
 def addFrontmatter(text, path):
     temp = text.split("---")
     print(len(temp))
     if len(temp) >= 2:
-      summary = temp[0]
+      summary = temp[0].lstrip()
       body = '---'.join(temp[1:])
     else:
       summary=""
       body=text
     date = subprocess.run(['cd temp && git log -1 --pretty="format:%ct" "' + path + '"'], shell=True, stdout=subprocess.PIPE).stdout.decode('utf-8')
     print(path +": " + str(date))
-    return str(content.Article(frontmatter = {
+    t = str(content.Article(frontmatter = {
       'title': path.split('.')[0],
       'summary': summary,
-      'date': date
+      'date': str(date)
     }, body = body))
+    print(t)
+    return t
 
 obsidian_to_hugo = ObsidianToHugo(
     obsidian_vault_dir="./temp",
