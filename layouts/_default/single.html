@@ -2,7 +2,7 @@
     <article class="fullwidth">
         <h1 data-text="{{ .Title }}" class="glitch">{{ .Title }}</h1>
         <section>
-            Last Updated: {{ .Date.Format "January 2, 2006"  }} <br>
+            Last Updated: <span>{{ .Date.Format "January 2, 2006"  }}</span> <br>
             {{ if (.Param "projectPage")}}{{ if not (eq (.Param "projectPage") "None") }}
             <a href='{{ .Param "projectPage" }}'>Project Code</a> {{ end }}{{ end }}
 
