@@ -7,7 +7,7 @@
 
     <nav class="menu">
         {{ range .Site.Home.Pages }}
-            {{ if and (ne .Title "index")}}
+            {{ if and (ne .Title "index") (ne .Title "404 Not Found")}}
                 <a href="{{ .Permalink }}" class="pseudo">{{ .Title }}</a>
             {{ end }}
         {{ end }}

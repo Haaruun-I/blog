@@ -13,9 +13,12 @@ def formatFile(self):
     return filetext
 
 class Article():
-    def __init__(self, name="", frontmatter={}, body=""):
+    def __init__(self, name="", frontmatter={}, body="", filename=""):
         self.frontmatter = frontmatter
         self.body = body
+
+        if filename: self.filename =  filename
+        else: self.filename = f"{self.frontmatter['title']}.md"
 
     def __str__(self):
         return formatFile(self)
@@ -26,6 +29,7 @@ class Category():
         self.frontmatter = frontmatter
         self.children = []
         self.body = body
+
 
     def save(self, parent_folder="."):
         folder_path = os.path.join(parent_folder, self.name)
@@ -38,7 +42,7 @@ class Category():
 
         for child in self.children:
             if isinstance(child, Article):
-                child_file_path = os.path.join(folder_path, f"{child.frontmatter['title']}.md")
+                child_file_path = os.path.join(folder_path, child.filename)
                 writeFile(child_file_path, formatFile(child))
 
             elif isinstance(child, Category):

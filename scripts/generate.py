@@ -58,6 +58,12 @@ root = content.Category("content", {
     'title': "Home"
 },authorBlurbResponse)
 
+notfoundPage = content.Article(frontmatter={
+  "title": "404 Not Found",
+  "date": "None"
+}, body="Sorry, the page your looking for cannot be found", filename="404.md")
+root.children.append(notfoundPage)
+
 posts = content.Category("posts", {'title': 'Posts'})
 projects = content.Category("projects", {'title': 'Projects'})
 

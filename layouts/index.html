@@ -6,7 +6,7 @@
         </div>
     </section>
     <br><hr><br>
-    {{ range .Site.Home.Pages }}{{ if and (ne .Title "index")}}
+    {{ range .Site.Home.Pages }}{{ if and (ne .Title "index") (ne .Title "404 Not Found")}}
         <section>
             <h1 class="center glitch" data-text="{{.Title}}">{{ .Title }}</h1>
             {{ range first 5 .Pages }}
