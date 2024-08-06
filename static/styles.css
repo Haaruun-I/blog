@@ -1,5 +1,5 @@
 :root {
-  --surface: hsl(55, 14%, 90%);
+  --surface: white;
   --highlight: hsl(180, 8%, 3%);
   --underlay: hsl(180, 8%, 13%);
 }
@@ -82,6 +82,10 @@ article span {
     font-weight: 100;
 
     display: inline;
+}
+
+article span.date {
+    margin-left: .5rem;
 }
 
 figure {
