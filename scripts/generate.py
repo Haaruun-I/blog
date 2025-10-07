@@ -116,4 +116,4 @@ obsidian_to_hugo = ObsidianToHugo(
     processors=[addFrontmatter]
 )
 
-obsidian_to_hugo.run()
+# obsidian_to_hugo.run()
