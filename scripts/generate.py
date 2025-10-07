@@ -67,7 +67,7 @@ root.children.append(notfoundPage)
 posts = content.Category("posts", {'title': 'Posts'})
 projects = content.Category("projects", {'title': 'Projects'})
 
-root.children.append(posts)
+#root.children.append(posts)
 root.children.append(projects)
 
 pinnedItemsResponse = graphqlQueary(url, token, pinnedItemsQuery)
